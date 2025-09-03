@@ -5,12 +5,13 @@ import {
   Flex,
   Textarea,
   createListCollection,
+  useDialogContext,
 } from "@chakra-ui/react";
 
 import { CircleX } from "lucide-react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { toaster } from "../../../../components/ui/toaster";
-import { DocumentosCadastraisService } from "../../../../service/documentos-cadastrais";
+import { DocumentosFiscaisService } from "../../../../service/documentos-fiscais";
 import { queryClient } from "../../../../config/react-query";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,11 +34,12 @@ const reprovacaoSchema = z.object({
   observacaoPrestador: z.string().optional(),
 });
 
-export const ReprovarForm = ({ documentoCadastralId }) => {
+export const ReprovarForm = ({ documentoFiscalId }) => {
+  const { setOpen } = useDialogContext();
   const { data } = useQuery({
-    queryKey: ["list-motivo-recusa-documento-cadastral"],
+    queryKey: ["list-motivo-recusa-documento-fiscal"],
     queryFn: async () =>
-      ListaOmieService.getListByCode({ cod: "motivo-recusa-documento-cadastral" }),
+      ListaOmieService.getListByCode({ cod: "motivo-recusa-documento-fiscal" }),
   });
 
   const motivoRecusaList = createListCollection({
@@ -50,28 +52,29 @@ export const ReprovarForm = ({ documentoCadastralId }) => {
 
   const { mutateAsync: reprovarDocumento } = useMutation({
     mutationFn: async ({ motivoRecusa, observacao, observacaoPrestador }) =>
-      await DocumentosCadastraisService.reprovarDocumentoCadastral({
+      await DocumentosFiscaisService.reprovarDocumentoFiscal({
         body: {
           motivoRecusa,
-          observacaoInterna: observacao,
-          observacaoPrestador,
+          observacao,
+          // observacaoPrestador,
           statusValidacao: "recusado",
         },
-        id: documentoCadastralId,
-        origem: ORIGENS.APROVACAO_DOCUMENTO_CADASTRAL,
+        id: documentoFiscalId,
+        origem: ORIGENS.APROVACAO_DOCUMENTO_FISCAL,
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["listar-documentos-cadastrais"],
+      queryClient.refetchQueries({
+        queryKey: ["listar-documentos-fiscais"],
       });
       toaster.create({
-        title: "Documento cadastral reprovado com sucesso!",
+        title: "Documento fiscal reprovado com sucesso!",
         type: "success",
       });
+      setOpen(false);
     },
     onError: () => {
       toaster.create({
-        title: "Ouve um erro ao reprovar o documento cadastral!",
+        title: "Ouve um erro ao reprovar o documento fiscal!",
         type: "error",
       });
     },
@@ -149,7 +152,7 @@ export const ReprovarForm = ({ documentoCadastralId }) => {
                 />
               </Box>
               <Box p="2" />
-              <Box>
+              {/* <Box>
                 <Text fontSize="sm" color="gray.600">
                   Observação para o prestador
                 </Text>
@@ -160,7 +163,7 @@ export const ReprovarForm = ({ documentoCadastralId }) => {
                   resize="none"
                   rows={3}
                 />
-              </Box>
+              </Box> */}
               <Box p="2" />
               <Button
                 type="submit"

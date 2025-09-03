@@ -87,10 +87,10 @@ const importarDocumentosFiscais = async ({ files }) => {
   return response;
 };
 
-const aprovarDocumentoFiscal = async ({ id, origem }) => {
+const aprovarDocumentoFiscal = async ({ id, origem, servicos, ticket }) => {
   const { data } = await api.post(
     `/documentos-fiscais/aprovar-documento/${id}`,
-    {},
+    { servicos, ticket },
     {
       headers: {
         "x-origem": origem,

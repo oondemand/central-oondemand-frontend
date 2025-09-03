@@ -33,6 +33,7 @@ import {
 export const toaster = createToaster({
   placement: "bottom-end",
   pauseOnPageIdle: true,
+  autoFocus: false,
 });
 
 const baseCreate = toaster.create;

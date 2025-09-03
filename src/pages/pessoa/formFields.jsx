@@ -12,11 +12,12 @@ import { LISTA_PAISES_OMIE } from "../../constants/omie";
 import { DefaultContainer } from "../../components/buildForm/components/default";
 import { ConditionalRendering } from "../../components/buildForm/components/conditionalReendering";
 import { dateValidation } from "../../utils/zodHelpers";
+import { SwitchField } from "../../components/buildForm/filds/switchField";
 
 export const createDynamicFormFields = () => {
   return [
     {
-      label: "Detalhes do cliente/prestador",
+      label: "Detalhes do Prestador",
       group: [
         {
           accessorKey: "nome",
@@ -75,6 +76,13 @@ export const createDynamicFormFields = () => {
             label: e.cDescricao,
           })),
           defaultValue: "1058",
+        },
+        {
+          accessorKey: "cadastro_aprovado",
+          label: "Cadastro aprovado",
+          render: SwitchField,
+          validation: z.boolean().optional(),
+          colSpan: 1,
         },
       ],
     },

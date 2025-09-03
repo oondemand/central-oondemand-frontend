@@ -60,7 +60,7 @@ export const makeDynamicColumns = () => {
     },
     {
       accessorKey: "pessoa",
-      header: "Cliente ou prestador",
+      header: "Prestador",
       enableSorting: false,
       cell: SelectPrestadorCell,
       enableColumnFilter: true,

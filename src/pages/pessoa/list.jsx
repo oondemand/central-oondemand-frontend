@@ -55,7 +55,7 @@ export const PessoasList = () => {
       >
         <Box>
           <Text fontSize="lg" color="gray.700" fontWeight="semibold">
-            Clientes e prestadores
+            Prestadores
           </Text>
           <Box mt="4" bg="white" py="6" px="4" rounded="lg" shadow="xs">
             <DataGrid

@@ -80,7 +80,7 @@ export const SelectPrestadorField = ({ ...props }) => {
   return (
     <Box>
       <Box>
-        <Text fontSize="sm">Cliente ou prestador</Text>
+        <Text fontSize="sm">Prestador</Text>
         <Controller
           name={props.field.name}
           control={props.methods.control}

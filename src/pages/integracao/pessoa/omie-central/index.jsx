@@ -88,7 +88,7 @@ export const IntegracaoPessoaOmieCentralEsteira = () => {
       <Flex pb="4" justifyContent="space-between">
         <Flex alignItems="center" gap="2">
           <Heading color="gray.700" fontSize="2xl">
-            Integração cliente/prestador central {"<-"} omie
+            Integração Prestador omie {"->"} central
           </Heading>
 
           <Tooltip content="Sincronizar com omie">

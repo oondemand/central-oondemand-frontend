@@ -61,10 +61,10 @@ Se tudo ocorrer como esperado cada lista deverá conter apenas um valor. E todo 
 
 ![](erro-lista-valor-existente.png)
 
-## 🔧 Cliente/prestadores
+## 🔧 Prestadores
 
 OBS: Email e documento são campos obrigatórios do omie, sem eles a integração não funcionará corretamente.
-Campo Pais é obrigatório para clientes/prestador do tipo exterior.
+Campo Pais é obrigatório para Prestador do tipo exterior.
 
 📍 **Criação/edição**
 
@@ -94,11 +94,11 @@ Todos os dados devem ter sido atualizados corretamente.
 
 **Requisitos**
 
-- Pelo menos um Cliente/prestador adicionado
+- Pelo menos um Prestador adicionado
 
 **Passo a passo**
 
-- Ainda no datagrid de Cliente/prestadores (pessoas), clique em **excel** e em **exportar datagrid**
+- Ainda no datagrid de Prestadores (pessoas), clique em **excel** e em **exportar datagrid**
 
 ![](excel-button.png)
 
@@ -108,7 +108,7 @@ Todos os dados devem ter sido atualizados corretamente.
 
 **Requisitos**
 
-- Pelo menos um Cliente/prestador adicionado
+- Pelo menos um Prestador adicionado
 
 **Passo a passo**
 
@@ -137,7 +137,7 @@ Deverá aparecer uma box com detalhes da importação:
 
 - Tente importar a mesma planilha novamente.
 
-Desta vez deve aparecer um erro na importação, já que estamos importando um cliente/prestador (pessoa) já existente.
+Desta vez deve aparecer um erro na importação, já que estamos importando um Prestador (pessoa) já existente.
 
 ![](resumo-importacao.png)
 
@@ -251,7 +251,7 @@ O status de processamento deve ter voltado para aberto, e não há mais nenhum d
 **Requisitos**
 
 - Listas com pelo menos um valor preenchido
-- Pelo menos um Cliente/prestador adicionado
+- Pelo menos um Prestador adicionado
 
 **Passo a passo**
 
@@ -345,7 +345,7 @@ O status de validação deve ter sido alterado para **recusado**
 **Requisitos**
 
 - Listas com pelo menos um valor preenchido
-- Pelo menos um Cliente/prestador adicionado
+- Pelo menos um Prestador adicionado
 
 **Passo a passo**
 
@@ -411,7 +411,7 @@ Deverá aparecer uma box com detalhes da importação:
 **Requisitos**
 
 - Listas com pelo menos um valor preenchido
-- Pelo menos um Cliente/prestador adicionado
+- Pelo menos um Prestador adicionado
 - Pelo menos um serviço adicionado
 - Pelo menos um documento documento fiscal adicionado
 
@@ -419,15 +419,15 @@ Deverá aparecer uma box com detalhes da importação:
 
 - Em **/servicos-tomados** clique no botão de criar ticket
 - Preencha o título
-- Crie um novo Cliente/prestador com o formulário do ticket.
+- Crie um novo Prestador com o formulário do ticket.
 - Acesse /pessoas
 - Verifique se há duas pessoas adicionadas
 - Volte para /servicos-tomados
-- Selecione outro cliente/prestador
-- Selecione um serviço (certifique se que existe um serviço com o cliente/prestador selecionado no ticket)
+- Selecione outro Prestador
+- Selecione um serviço (certifique se que existe um serviço com o Prestador selecionado no ticket)
 - Remova o serviço
 - Adicione novamente
-- Selecione documento fiscal (certifique se que existe um documento fiscal com o cliente/prestador selecionado no ticket)
+- Selecione documento fiscal (certifique se que existe um documento fiscal com o Prestador selecionado no ticket)
 - Remova documento fiscal
 - Adicione anexo ao ticket
 - Altere o status do ticket para trabalhando
@@ -453,7 +453,7 @@ Uma parte muito importante do sistema se consiste nos filtros, tanto da esteira,
 
 - Selecione uma coleção, preencha cada filtro com o campo respectivo da coleção.
 
-O exemplo a seguir foi realizado na coleção de clientes/prestadores
+O exemplo a seguir foi realizado na coleção de Prestadores
 ![](exemplo-filtros.png)
 fique atento pois se em algum momento não for listado nenhum item isso significa que o campo filtrado esta com algum problema.
 

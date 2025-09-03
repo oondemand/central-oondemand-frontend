@@ -16,7 +16,7 @@ import { formatDateToDDMMYYYY } from "../../utils/formatting";
 
 export const PessoasDialog = ({
   defaultValues = null,
-  label = "Adicionar cliente/prestador",
+  label = "Adicionar Prestador",
 }) => {
   const [data, setData] = useState(defaultValues);
   const [open, setOpen] = useState(false);

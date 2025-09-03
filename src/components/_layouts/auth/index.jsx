@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Text, Icon, Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Text,
+  Icon,
+  Spinner,
+  Image,
+} from "@chakra-ui/react";
 import {
   Outlet,
   useLocation,
@@ -82,12 +90,12 @@ export const AuthLayout = () => {
           borderColor="gray.50"
         >
           <Link to="/" viewTransition>
-            <Box w="120px">
-              {/* <img src="/logo_rakuten_purple.png" alt="RAKUTEN" /> */}
-              <Text fontSize="lg" fontWeight="700">
-                oondemand
+            <Flex flexDir="column" alignItems="center" gap="1">
+              <img src="/logo_vertical.png" alt="logo" />
+              <Text fontSize="xs" fontWeight="medium" mt="-2">
+                CST Multi-moedas
               </Text>
-            </Box>
+            </Flex>
           </Link>
         </Flex>
         {menuItems.map((item, index) => {

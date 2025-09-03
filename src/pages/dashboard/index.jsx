@@ -398,7 +398,7 @@ export const Dashboard = () => {
         <Flex gap="10" mt="4" alignItems="flex-start">
           {integracao?.pessoa?.central_omie && (
             <IntegracaoCard
-              title="Cliente/prestador central -> omie"
+              title="Prestador central -> omie"
               link="/integracao/pessoa/central-omie"
               integracao={integracao.pessoa.central_omie}
             />
@@ -406,7 +406,7 @@ export const Dashboard = () => {
 
           {integracao?.pessoa?.omie_central && (
             <IntegracaoCard
-              title="Cliente/prestador central <- omie"
+              title="Prestador central <- omie"
               link="/integracao/pessoa/omie-central"
               integracao={integracao.pessoa.omie_central}
             />

@@ -47,7 +47,7 @@ export const makeDocumentoCadastralDynamicColumns = () => {
     },
     {
       accessorKey: "pessoa",
-      header: "Cliente ou prestador",
+      header: "Prestador",
       enableSorting: false,
       cell: SelectPrestadorCell,
       enableColumnFilter: true,
@@ -60,12 +60,14 @@ export const makeDocumentoCadastralDynamicColumns = () => {
       accessorKey: "tipoDocumento",
       header: "Tipo de documento",
       enableSorting: false,
-      cell: (props) => <SelectListaCell {...props} cod={"tipo-documento"} />,
+      cell: (props) => (
+        <SelectListaCell {...props} cod={"tipo-documento-cadastral"} />
+      ),
       enableColumnFilter: true,
       meta: {
         filterKey: "tipoDocumento",
         filterVariant: "selectLista",
-        cod: "tipo-documento",
+        cod: "tipo-documento-cadastral",
       },
     },
     {
@@ -90,12 +92,12 @@ export const makeDocumentoCadastralDynamicColumns = () => {
       accessorKey: "motivoRecusa",
       header: "Motivo recusa",
       enableSorting: false,
-      cell: (props) => <SelectListaCell {...props} cod={"motivo-recusa"} />,
+      cell: (props) => <SelectListaCell {...props} cod={"motivo-recusa-documento-cadastral"} />,
       enableColumnFilter: true,
       meta: {
         filterKey: "motivoRecusa",
         filterVariant: "selectLista",
-        cod: "motivo-recusa",
+        cod: "motivo-recusa-documento-cadastral",
       },
     },
     // {

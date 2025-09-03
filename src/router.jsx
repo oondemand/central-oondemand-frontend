@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "./components/_layouts/main";
-import { LoginPage } from "./pages/login";
+// import { LoginPage } from "./pages/login";
 import { AuthLayout } from "./components/_layouts/auth";
 import { PessoasList } from "./pages/pessoa/list";
 // import { ServicosList } from "./pages/servicos/list";

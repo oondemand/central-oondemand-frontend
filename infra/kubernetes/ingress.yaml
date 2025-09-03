@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: central-oondemand-frontend-ingress
-  namespace: central-oondemand
+  name: cst-multimoedas-frontend-ingress
+  namespace: cst-multimoedas
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-nginx
     kubernetes.io/ingress.class: nginx
@@ -13,16 +13,16 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - central.oondemand.online
+        - cst-multimoedas.oondemand.online
       secretName: app-tls
   rules:
-    - host: central.oondemand.online
+    - host: cst-multimoedas.oondemand.online
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: central-oondemand-frontend-service
+                name: cst-multimoedas-frontend-service
                 port:
                   number: 80

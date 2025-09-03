@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: central-oondemand-frontend
-  namespace: central-oondemand
+  name: cst-multimoedas-frontend
+  namespace: cst-multimoedas
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: central-oondemand-frontend
+      app: cst-multimoedas-frontend
   template:
     metadata:
       labels:
-        app: central-oondemand-frontend
+        app: cst-multimoedas-frontend
     spec:
       containers:
-        - name: central-oondemand-frontend-container
-          image: ghcr.io/oondemand/central-oondemand-frontend:${IMAGE_TAG}-prod
+        - name: cst-multimoedas-frontend-container
+          image: ghcr.io/oondemand/cst-multimoedas-frontend:${IMAGE_TAG}-prod
           ports:
             - containerPort: 3000
           resources:

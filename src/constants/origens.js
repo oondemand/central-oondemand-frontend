@@ -22,10 +22,14 @@ export const ENTIDADES = {
   CONFIGURACAO_ETAPA: "configuracao.etapa",
   CONFIGURACAO_LISTA_CAMPANHA: "configuracao.lista.campanha",
   CONFIGURACAO_LISTA_MANAGER: "configuracao.lista.manager",
-  CONFIGURACAO_LISTA_TIPO_DOCUMENTO: "configuracao.lista.tipo-documento",
+  CONFIGURACAO_LISTA_TIPO_DOCUMENTO_CADASTRAL:
+    "configuracao.lista.tipo-documento-cadastral",
   CONFIGURACAO_LISTA_TIPO_DOCUMENTO_FISCAL:
     "configuracao.lista.tipo-documento-fiscal",
-  CONFIGURACAO_LISTA_MOTIVO_RECUSA: "configuracao.lista.motivo-recusa",
+  CONFIGURACAO_LISTA_MOTIVO_RECUSA_DOCUMENTO_FISCAL:
+    "configuracao.lista.motivo-recusa-documento-fiscal",
+  CONFIGURACAO_LISTA_MOTIVO_RECUSA_DOCUMENTO_CADASTRAL:
+    "configuracao.lista.motivo-recusa-documento-cadastral",
   CONFIGURACAO_LISTA_MOTIVO_OMIE: "configuracao.lista.omie",
 };
 

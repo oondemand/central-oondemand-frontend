@@ -33,7 +33,7 @@ export const makeServicoDynamicColumns = () => {
     },
     {
       accessorKey: "pessoa",
-      header: "Cliente ou prestador",
+      header: "Prestador",
       enableSorting: false,
       cell: (props) => (
         <Flex minH="8">

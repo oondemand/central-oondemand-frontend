@@ -23,15 +23,15 @@ import { useIaChat } from "../../../hooks/useIaChat";
 import { Oondemand } from "../../../components/svg/oondemand";
 import { useLoadAssistant } from "../../../hooks/api/assistant-config/useLoadAssistant";
 
-export const ArquivoDetailsDialog = ({ documentoCadastral }) => {
+export const ArquivoDetailsDialog = ({ documentoFiscal }) => {
   const [open, setOpen] = useState(false);
   const [pdfUrl, setPdfUrl] = useState(null);
 
   const { data: response } = useQuery({
-    queryKey: ["file/documento-cadastral", documentoCadastral?.arquivo?._id],
+    queryKey: ["file/documento-fiscal", documentoFiscal?.arquivo?._id],
     queryFn: async () =>
       await ServicoTomadoTicketService.getFile({
-        id: documentoCadastral?.arquivo?._id,
+        id: documentoFiscal?.arquivo?._id,
       }),
     enabled: open,
     staleTime: 1000 * 60 * 1, // 1 minute
@@ -53,7 +53,7 @@ export const ArquivoDetailsDialog = ({ documentoCadastral }) => {
   }, [response]);
 
   const { onOpen } = useIaChat();
-  const { assistant } = useLoadAssistant(["documento-cadastral.analise"]);
+  const { assistant } = useLoadAssistant(["documento-fiscal.analise"]);
 
   const zoomPluginInstance = zoomPlugin();
   const { ZoomInButton, ZoomOutButton, ZoomPopover, zoomTo } =
@@ -67,7 +67,7 @@ export const ArquivoDetailsDialog = ({ documentoCadastral }) => {
     <Box>
       <Box onClick={() => setOpen(true)}>
         <Tooltip
-          content="Analisar documento cadastral"
+          content="Analisar documento fiscal"
           openDelay={1000}
           closeDelay={50}
         >
@@ -105,14 +105,14 @@ export const ArquivoDetailsDialog = ({ documentoCadastral }) => {
                   variant="unstyled"
                   onClick={() => {
                     onOpen(
-                      { ...documentoCadastral, arquivo: response?.data },
+                      { ...documentoFiscal, arquivo: response?.data },
                       assistant
                     );
                   }}
                 >
                   <Oondemand />
                 </Box>
-                <DialogTitle>Analisar Documento Cadastral</DialogTitle>
+                <DialogTitle>Analisar Documento fiscal</DialogTitle>
               </Flex>
             </DialogHeader>
             <DialogBody>
@@ -169,10 +169,11 @@ export const ArquivoDetailsDialog = ({ documentoCadastral }) => {
                   h="730px"
                   className="dialog-custom-scrollbar"
                 >
-                  <AprovarForm documentoCadastral={documentoCadastral} />
-                  <ReprovarForm
-                    documentoCadastralId={documentoCadastral?._id}
+                  <AprovarForm
+                    prestadorId={documentoFiscal?.prestador?._id}
+                    documentoFiscal={documentoFiscal}
                   />
+                  <ReprovarForm documentoFiscalId={documentoFiscal?._id} />
                 </Flex>
               </Flex>
             </DialogBody>

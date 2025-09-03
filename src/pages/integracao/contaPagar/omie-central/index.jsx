@@ -88,7 +88,7 @@ export const IntegracaoContaPagarOmieCentralEsteira = () => {
       <Flex pb="4" justifyContent="space-between">
         <Flex alignItems="center" gap="2">
           <Heading color="gray.700" fontSize="2xl">
-            Integração conta pagar central {"<-"} omie
+            Integração conta pagar omie {"->"} central
           </Heading>
 
           <Tooltip content="Sincronizar com omie">

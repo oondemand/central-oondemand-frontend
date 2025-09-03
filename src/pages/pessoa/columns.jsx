@@ -17,6 +17,7 @@ import { LISTA_PAISES_OMIE } from "../../constants/omie";
 import { DeletePessoaAction } from "../../components/dataGrid/actions/deletePessoaButton";
 import { SyncOmieStatusCell } from "./components/syncOmieStatusCell";
 import { LinkIntegracaoAction } from "../../components/dataGrid/actions/linkIntegracaoAction";
+import { SwitchCell } from "../../components/dataGrid/cells/switchCelll";
 
 export const makeDynamicColumns = () => {
   return [
@@ -193,6 +194,11 @@ export const makeDynamicColumns = () => {
           options={REGIME_TRIBUTARIO_OPTIONS}
         />
       ),
+    },
+    {
+      accessorKey: "cadastro_aprovado",
+      header: "Cadastro aprovado",
+      cell: SwitchCell,
     },
   ];
 };

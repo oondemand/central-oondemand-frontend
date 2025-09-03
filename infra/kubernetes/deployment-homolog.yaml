@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: central-oondemand-frontend-homolog
-  namespace: central-oondemand-homolog
+  name: cst-multimoedas-frontend-homolog
+  namespace: cst-multimoedas-homolog
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: central-oondemand-frontend-homolog
+      app: cst-multimoedas-frontend-homolog
   template:
     metadata:
       labels:
-        app: central-oondemand-frontend-homolog
+        app: cst-multimoedas-frontend-homolog
     spec:
       containers:
-        - name: central-oondemand-frontend-homolog-container
-          image: ghcr.io/oondemand/central-oondemand-frontend:${IMAGE_TAG}-homolog
+        - name: cst-multimoedas-frontend-homolog-container
+          image: ghcr.io/oondemand/cst-multimoedas-frontend:${IMAGE_TAG}-homolog
           ports:
             - containerPort: 3000
           resources:

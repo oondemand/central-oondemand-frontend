@@ -66,7 +66,7 @@ export const TicketActions = ({ id, etapa, parentId, origem }) => {
   return (
     <Flex alignItems="center" w="full" justifyContent="space-between">
       <Flex gap="2">
-        {["erro"].includes(etapa) && (
+        {["falha"].includes(etapa) && (
           <Button
             disabled={isReprocessingPending || etapa === "sucesso"}
             onClick={async (e) => {

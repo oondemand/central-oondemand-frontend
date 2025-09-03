@@ -28,12 +28,18 @@ export const menuItems = [
     icon: CalendarSync,
   },
   {
+    title: "Documentos Fiscais",
+    href: "/documentos-fiscais",
+    icon: NotepadText,
+    rules: ["admin", "tomador"],
+  },
+  {
     title: "Central Serviços Tomados",
     icon: InvertedChart,
     href: "/servicos-tomados",
   },
   {
-    title: "Clientes e prestadores",
+    title: "Prestadores",
     icon: Users,
     href: "/pessoas",
   },
@@ -47,34 +53,30 @@ export const menuItems = [
     icon: ListChecks,
     href: "/servicos",
   },
-  {
-    title: "Documentos Fiscais",
-    href: "/documentos-fiscais",
-    rules: ["admin", "tomador"],
-  },
+
   {
     title: "Integrações",
     icon: Rotate3D,
     rules: ["admin"],
     subLinks: [
       {
-        title: "Cliente/prestador central -> Omie",
+        title: "Prestador central -> omie",
         href: "/integracao/pessoa/central-omie",
       },
       {
-        title: "Cliente/prestador central <- Omie",
+        title: "Prestador omie -> central",
         href: "/integracao/pessoa/omie-central",
       },
       {
-        title: "Conta pagar central -> Omie",
+        title: "Conta pagar central -> omie",
         href: "/integracao/conta-pagar/central-omie",
       },
       {
-        title: "Conta pagar central <- Omie",
+        title: "Conta pagar omie -> central",
         href: "/integracao/conta-pagar/omie-central",
       },
       {
-        title: "Anexos central -> Omie",
+        title: "Anexos central -> omie",
         href: "/integracao/anexos/central-omie",
       },
     ],
